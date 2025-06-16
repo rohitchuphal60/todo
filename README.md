@@ -29,5 +29,4 @@ It helps you **add**, **edit**, **delete**, and **mark tasks as done** — all i
 
 1️⃣ Download or clone this repository:  
 ```bash
-git clone https://github.com/your-username/your-todo-app.git
-cd your-todo-app
+git clone https://github.com/rohitchuphal60/todo.git
