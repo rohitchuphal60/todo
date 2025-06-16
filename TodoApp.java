@@ -258,13 +258,15 @@ public class TodoApp extends JFrame {
     }
 
     public static void main(String[] args) {
-        // Set look and feel
+        // Set look and feel - removed for compatibility
+        // If you want to use system look and feel, uncomment the code below
+        /*
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeel());
-        } catch (ClassNotFoundException | InstantiationException | 
-                 IllegalAccessException | UnsupportedLookAndFeelException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
+        */
         
         SwingUtilities.invokeLater(new Runnable() {
             @Override
