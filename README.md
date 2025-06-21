@@ -4,19 +4,7 @@ This project demonstrates how to build and run a **Java application using Maven*
 
 ---
 
-## 📁 Project Structure
 
-java-maven-docker/
-│
-├── app/
-│ ├── src/main/java/com/example/Main.java # Java code
-│ ├── pom.xml # Maven config
-│ └── Dockerfile # Java app Dockerfile
-│
-└── README.md
-
-
----
 
 ## ⚙️ Technologies Used
 
@@ -44,13 +32,13 @@ docker run -d \
   mysql:8.0
 ```
 
-## Build Java App Image
+## 2️⃣  Build Java App Image
 ```bash
 cd app/
 docker build -t java-app:1.0 .
 ```
 
-## Run Java App
+## 3️⃣ Run Java App
 ```bash
 docker run --rm \
   --name java-app \
