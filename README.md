@@ -1,31 +1,59 @@
-# Java GUI To-Do Application
+# Java JDBC + MySQL with Docker
 
- *Welcome to my Java GUI To-Do App!*
-This is a simple and easy-to-use To-Do list application made using *Java*.  
-It helps you *add*, *edit*, *delete*, and *mark tasks as done* — all in a nice graphical window (GUI).
------------
+This project demonstrates how to build and run a **Java application using Maven**, which connects to a **MySQL database** using **JDBC**, all containerized with Docker.
+
+---
+
+## 📁 Project Structure
+
+java-maven-docker/
+│
+├── app/
+│ ├── src/main/java/com/example/Main.java # Java code
+│ ├── pom.xml # Maven config
+│ └── Dockerfile # Java app Dockerfile
+│
+└── README.md
 
 
-## To Run This Applicaton 
+---
 
+## ⚙️ Technologies Used
 
-**If you have Java installed:**  
+- Java 17
+- Maven
+- MySQL 8
+- JDBC
+- Docker
 
-  **Download or clone this repository:**  
+---
+
+## 🚀 How to Run
+
+### 1️⃣ Create a Docker Network
+
 ```bash
-git clone https://github.com/rohitchuphal60/todo.git
+docker network create java-net
+
+docker run -d \
+  --name mysql-db \
+  --network java-net \
+  -e MYSQL_ROOT_PASSWORD=root \
+  -e MYSQL_DATABASE=mydb \
+  -p 3306:3306 \
+  mysql:8.0
 ```
 
-  **Then convert it into Byte code**
-
-```bash 
-javac TodoApp.java
-```
-**Run Application**
-
+## Build Java App Image
 ```bash
-java TodoApp
+cd app/
+docker build -t java-app:1.0 .
 ```
 
-
-
+## Run Java App
+```bash
+docker run --rm \
+  --name java-app \
+  --network java-net \
+  java-app:1.0
+```
